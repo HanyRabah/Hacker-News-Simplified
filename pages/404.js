@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const Custom404 = () => {
   return (
@@ -13,7 +14,9 @@ const Custom404 = () => {
             <Error404Message>4</Error404Message>
           </Error404MessageWrapper>
         </Error404>
-          <a href="/"> Back Home</a>
+        <Link href="/">
+          <span> Back Home</span>
+        </Link>
       </ErrorWrapper>
     </ErrorPage>
   );
@@ -22,7 +25,7 @@ const Custom404 = () => {
 const ErrorPage = styled.div`
   position: relative;
   height: 100%;
-  margin-top: 80px;
+  padding-top: 80px;
 `;
 const ErrorWrapper = styled.div`
   width: 100%;
