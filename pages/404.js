@@ -37,7 +37,7 @@ const Error404 = styled.div`
 `;
 const Error404Title = styled.h3`
   position: relative;
-  font-size: 16px;
+  font-size: ${({theme}) => theme.fontSize.default};
   font-weight: 700;
   text-transform: uppercase;
   color: gray;

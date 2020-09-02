@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
 };
 
 const PageWrapper = styled.div`
-  background-color: #e2e8f0;
+  background-color: ${({theme}) => theme.color.layoutBg}; 
   min-height: 100vh;
 `;
 const Container = styled.div`
@@ -32,7 +32,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   min-height: 80vh;
-  background-color: #fff;
+  background-color: ${({theme}) => theme.color.white}; ;
   border-radius: 8px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);

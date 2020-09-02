@@ -18,6 +18,9 @@ export const GlobalStyle = createGlobalStyle`
 export const theme = {
   color: {
     orange: "#FF6C47",
+    layoutBg: "#e2e8f0",
+    white: "#FFFFFF",
+    gray: "#333333"
   },
   fontSize: {
     tiny: '10px',

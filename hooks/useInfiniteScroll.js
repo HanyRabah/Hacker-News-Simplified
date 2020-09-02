@@ -8,7 +8,7 @@ const useScrollLoading = () => {
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(STORY_INCREMENT);
 
-  const handleScroll =  debounce(() => {
+  const handleScroll =  () => {
     if (
       window.innerHeight + document.documentElement.scrollTop !==
         document.documentElement.offsetHeight ||
@@ -17,7 +17,7 @@ const useScrollLoading = () => {
       return false;
     }
     setLoading(true);
-  }, 300)
+  }
 
   useEffect(() => {
     if (!loading) return;

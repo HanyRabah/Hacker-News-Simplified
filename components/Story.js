@@ -23,7 +23,7 @@ const Story = memo(({ storyId: id }) => {
               {timeMapping(story.time)}
             </StoryMetaItem>
           <StoryMetaItem>
-            <Icon src="/icons/profile.png" alt="username" />
+            <Icon src="/icons/profile.png" alt="username"/>
             <span data-testid="story-by">{story.by}</span>
           </StoryMetaItem>
           <StoryMetaItem>
@@ -43,13 +43,13 @@ const Story = memo(({ storyId: id }) => {
 
 const StoryTitle = styled.a`
   text-decoration: none;
-  color: #333;
+  color: ${({theme}) => theme.color.gray};
   margin-bottom: 1em;
   display: block;
 `;
 
 const StoryTitleText = styled.h5`
-  font-size: 20px;
+  font-size: ${({theme}) => theme.fontSize.large};
   font-weight: bold;
 `;
 
@@ -59,12 +59,12 @@ const StoryMeta = styled.div`
 const StoryMetaItem = styled.div`
   padding: 0.25em;
   margin-right: 2em;
-  font-size: 14px;
-  width: 120px;
+  font-size: ${({theme}) => theme.fontSize.small};
+  min-width: 120px;
   height: 30px;
   display: flex;
   align-items: center;
-  color: gray;
+  color: ${({theme}) => theme.color.gray};
 `
 
 const Icon = styled.span`
@@ -81,7 +81,7 @@ const StoryWrapper = styled.div`
   &:hover {
     background: #eee;
     ${StoryTitleText} {
-      color: #FF6C47;
+      color: ${({theme}) => theme.color.orange};
     }
   }
 `;
