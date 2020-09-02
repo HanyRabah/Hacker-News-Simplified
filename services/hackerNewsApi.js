@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { storiesSelector } from '@/selectors/storiesSelector';
 
 export const baseUrl = process.env.API_BASE_URL;
 export const newStoriesUrl = `${baseUrl}newstories.json`;
@@ -21,7 +22,7 @@ export const getTopStoriesIds = async () => {
 
 export const getStory = async (storyId) => {
   const result = await axios.get(`${storyUrl}${storyId}.json`)
-  .then(({ data }) => data)
+  .then(({ data }) => data && storiesSelector(data))
   .catch(err => console.log(err));
   return result;
 }
