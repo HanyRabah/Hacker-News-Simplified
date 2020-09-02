@@ -1,9 +1,9 @@
 import { Story } from '@/components';
 
-const Stories = ({ stories }) => {
+const Stories = ({ count, stories }) => {
   return (
     <div>
-      {stories.map((storyId) => <Story key={storyId} storyId={storyId} />)}
+      {stories.slice(0, count).map((storyId) => <Story key={storyId} storyId={storyId} />)}
     </div>
   )
 };

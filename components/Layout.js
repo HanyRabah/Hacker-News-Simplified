@@ -25,8 +25,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   padding: 0.5em;
-  height: 80vh;
-  overflow: scroll;
+  min-height: 80vh;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
