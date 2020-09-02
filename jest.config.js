@@ -16,6 +16,7 @@ module.exports = {
     "^@/fixtures(.*)$": "<rootDir>/fixtures$1",
     "^@/constants(.*)$": "<rootDir>/constants$1",
     "^@/selectors(.*)$": "<rootDir>/selectors$1",
+    "^@/styles(.*)$": "<rootDir>/styles$1",
   },
   coverageThreshold: {
     global: {
@@ -34,5 +35,6 @@ module.exports = {
     '!**/node_modules/**',
     "!hooks/**",
     "!utils/**",
+    "!.next/**",
   ]
 }

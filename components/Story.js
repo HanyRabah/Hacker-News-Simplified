@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo} from "react";
+import { useEffect, useState, memo} from "react";
 import { getStory } from "@/services/hackerNewsApi";
 import { timeMapping } from "@/utils/timeMapping";
 import styled from "styled-components";
@@ -43,13 +43,13 @@ const Story = memo(({ storyId: id }) => {
 
 const StoryTitle = styled.a`
   text-decoration: none;
-  color: ${({theme}) => theme.color.gray};
+  color: ${props => props && props.theme.color.gray};
   margin-bottom: 1em;
   display: block;
 `;
 
 const StoryTitleText = styled.h5`
-  font-size: ${({theme}) => theme.fontSize.large};
+  font-size: ${props => props && props.theme.fontSize.large};
   font-weight: bold;
 `;
 
@@ -59,12 +59,12 @@ const StoryMeta = styled.div`
 const StoryMetaItem = styled.div`
   padding: 0.25em;
   margin-right: 2em;
-  font-size: ${({theme}) => theme.fontSize.small};
+  font-size: ${props => props && props.theme.fontSize.small};
   min-width: 120px;
   height: 30px;
   display: flex;
   align-items: center;
-  color: ${({theme}) => theme.color.gray};
+  color: ${props => props && props.theme.color.gray};
 `
 
 const Icon = styled.span`
@@ -81,7 +81,7 @@ const StoryWrapper = styled.div`
   &:hover {
     background: #eee;
     ${StoryTitleText} {
-      color: ${({theme}) => theme.color.orange};
+      color: ${props => props && props.theme.color.orange};
     }
   }
 `;

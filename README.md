@@ -100,7 +100,8 @@ yarn test
 
 # Future Enhancement
 
-- Write Cypress test
+- Typescripts
 - Enhance test Coverage 
-- UI enhancment
+- Write Cypress test
 - Performance enhanching ( Speed Index and Time to Interactive, dns-prefetch )
+- UI enhancment ( Search, Filters )

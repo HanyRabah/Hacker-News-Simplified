@@ -37,7 +37,7 @@ const NavItem = styled.li`
 `;
 const NavRightItem = styled.li`
   margin-left: auto;
-  font-size: ${({theme}) => theme.fontSize.extra_small};
+  font-size: ${props => props && props.theme.fontSize.extra_small};
 `
 
 const NavText = styled.span`
@@ -45,11 +45,11 @@ const NavText = styled.span`
   border-radius: .5em;
   display: block;
   &:hover {
-    background: ${({theme}) => theme.color.orange}; 
+    background: ${props => props.theme.color.orange}; 
     color: white;
   }
   ${props => props.selected && css`
-  background: ${({theme}) => theme.color.orange}; 
+  background: ${props => props.theme.color.orange}; 
   color: white;
   `}
 `;

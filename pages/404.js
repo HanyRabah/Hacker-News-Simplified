@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
@@ -37,7 +36,7 @@ const Error404 = styled.div`
 `;
 const Error404Title = styled.h3`
   position: relative;
-  font-size: ${({theme}) => theme.fontSize.default};
+  font-size: ${props => props && props.theme.fontSize.default};
   font-weight: 700;
   text-transform: uppercase;
   color: gray;
