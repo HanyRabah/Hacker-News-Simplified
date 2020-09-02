@@ -1,10 +1,15 @@
-import Head from 'next/head'
+import { useEffect, useState } from 'react';
+import { getStoriesIds } from '@/services/hackerNewsApi';
+import { Stories } from '@/components';
 
-export default function Home() {
+const App = () => {
+  const [ storyIds, setStoryIds ] = useState([]);
+  
+  useEffect(() => {
+    getStoriesIds().then(ids => setStoryIds(ids));
+  }, []);
 
-  return (
-    <div>New</div>
-  )
+  return <Stories stories={storyIds} />
 }
 
-
+export default App
