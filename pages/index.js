@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getStoriesIds } from '@/services/hackerNewsApi';
-import useInfiniteScroll from '@/hooks/useScrollLoading';
+import useInfiniteScroll from '@/hooks/useInfiniteScroll';
 import Stories from '@/components/Stories';
 
 const App = () => {
