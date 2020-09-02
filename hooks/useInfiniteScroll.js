@@ -36,7 +36,7 @@ const useScrollLoading = () => {
     }
   }, []);
 
-  return { count };
+  return { count, loading };
   
 };
 export default useScrollLoading;

@@ -1,17 +1,23 @@
 import { useEffect, useState } from 'react';
 import { getStoriesIds } from '@/services/hackerNewsApi';
 import useInfiniteScroll from '@/hooks/useInfiniteScroll';
-import Stories from '@/components/Stories';
+import { Stories, Loader } from '@/components';
+
 
 const App = () => {
-  const { count } = useInfiniteScroll();
+  const { count, loading } = useInfiniteScroll();
+  const [ pageLoading, setPageLoading ] = useState(false);
   const [ storyIds, setStoryIds ] = useState([]);
   
   useEffect(() => {
-    getStoriesIds().then(ids => setStoryIds(ids));
+    setPageLoading(true)
+    getStoriesIds().then(ids => {
+      setStoryIds(ids)
+      setPageLoading(false);
+    });
   }, []);
 
-  return <Stories stories={storyIds} count={count} />
+  return <Stories stories={storyIds} count={count} loading={loading || pageLoading} />
 }
 
 export default App
