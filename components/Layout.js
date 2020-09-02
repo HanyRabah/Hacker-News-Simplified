@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { Header } from "@/components";
 
 const Layout = ({ children }) => {

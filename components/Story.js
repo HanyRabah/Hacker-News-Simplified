@@ -13,8 +13,8 @@ const Story = memo(({ storyId: id }) => {
   return (
     <>
      {story && story.url && 
-      <StoryWrapper>
-          <StoryTitle href={story.url} alt={story.title}>
+      <StoryWrapper data-testid="story">
+          <StoryTitle href={story.url} target="_blank" alt={story.title}>
             <StoryTitleText>{story.title}</StoryTitleText>
           </StoryTitle>
         <StoryMeta>
@@ -24,7 +24,7 @@ const Story = memo(({ storyId: id }) => {
             </StoryMetaItem>
           <StoryMetaItem>
             <Icon src="/icons/profile.png" alt="username" />
-            {story.by}
+            <span data-testid="story-by">{story.by}</span>
           </StoryMetaItem>
           <StoryMetaItem>
             <Icon src="/icons/likes.png" alt="score" />
