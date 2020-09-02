@@ -1,30 +1,106 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Table of contents
+* [General info](#general-info)
+* [Screen Shot](#screen-shot)
+* [Used Stack](#used-stack)
+* [Development decisions](#development-decisions)
+* [Folder Structure](#folder-structure)
+* [Setup](#setup)
+* [Future Enhancement](#future-enhancement)
 
-## Getting Started
+# General Info 
 
-First, run the development server:
+Show New and Top stories from HackerNews
+Using Hackernews Api https://github.com/hackernews/api
+Showing User data and Enhance the UI 
 
-```bash
-npm run dev
-# or
+# Screen Shot
+
+![Image of the App](https://i.ibb.co/tsf3s6G/Screen-Shot-2020-09-02-at-12-11-14-PM.png)
+
+
+# Used Stack
+Created by `Create Next App` 
+  - React.js
+  - Next.js
+  - Styled Components
+  - Axios
+  - Jest
+  - React Testing Library
+
+
+# Development decisions
+
+Started by creating a simple design to enhance the UI, and the analysing HackerNews API, Then started setuping the project with `Create Next App` and creating the main strucutre for the components and routes, finally I added tests to the project which cover the main functionality.
+
+<b>Why create Next app</b>
+create react next prepare everything to start modern single page with react 
+and save a lot of time in setup the build configuration and with next.js it cover the hassle of creating the routes in react by adding the main containers in the page folder.
+
+<b>Styled components</b>
+has full theming support by exporting a <ThemeProvider> wrapper component. 
+This component provides a theme to all React components underneath itself via the context API.
+Which make it easy to add themes colors and fonts to provide for the needed component.
+
+<b>Components</b>
+Separting the components so it will be easy to be reuseable with less logic possible.
+
+<b>Service</b>
+to Seperate the concern of coding by creating service which responsible only to fetch the data and then the component will manage the request.
+
+<b>Test</b>
+Adding tests for Api and main components, should use Cypress test for the UI
+
+<b>404</b>
+Error Page if the path provided is not the right one
+
+
+# Folder Structure 
+
+```
+/src
+  ├── __tests__       # For now it contains only App test
+  ├── constansts      # Global constats
+  ├── components      # All Components 
+  │   ├── Header
+  │   ├── Layout
+  │   ├── Loader
+  │   ├── Nav
+  │   ├── Stories
+  │   ├── Story
+  ├── pages           # Contain ( index/Home , 404, Top Stories ) pages
+  │   ├── index        # New News from hacker news
+  │   ├── TopStories  # Top Stories from hacker news 
+  │   ├── Error/404
+  ├── service         # Service logic to connect to HackerNews Api
+  ├── utils           # Utilites for hold helper functions
+  ├── selectors       # To Clean the data coming from stories
+  ├── styles          # Global Theme Styles
+```
+
+# Setup
+
+Install dependencies:
+
+```sh
+yarn
+```
+
+
+Run dev
+```sh
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run Tests 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```sh
+yarn test
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+# Future Enhancement
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Write Cypress test
+- Enhance test Coverage 
+- UI enhancment
+- Performance enhanching ( Speed Index and Time to Interactive, dns-prefetch )
