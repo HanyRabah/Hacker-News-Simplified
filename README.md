@@ -97,6 +97,11 @@ Run Tests
 yarn test
 ```
 
+Run Tests Coverage
+```sh
+yarn coverage
+```
+
 
 # Future Enhancement
 
