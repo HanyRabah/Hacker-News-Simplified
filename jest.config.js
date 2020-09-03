@@ -31,10 +31,11 @@ module.exports = {
     "text"
   ],
   collectCoverageFrom: [
-    '**/*.{js,jsx,ts,tsx}',
-    '!**/node_modules/**',
-    "!hooks/**",
-    "!utils/**",
-    "!.next/**",
+    "components/*.{js,jsx,ts,tsx}",
+    "constants/*.{js,jsx,ts,tsx}",
+    "fixtures/*.{js,jsx,ts,tsx}",
+    "selectors/*.{js,jsx,ts,tsx}",
+    "services/*.{js,jsx,ts,tsx}",
+    "pages/*.{js,jsx,ts,tsx}",
   ]
 }
